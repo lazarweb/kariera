@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--dark-gray: #c4c4c4;
+	--light-gray: #eaeaea;
+	--text-blue: #2a00ff;
+	--card-bg: #f2f2f2;
+}
+html {
+	scroll-behavior: smooth;
+}
+.max-width {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1200px;
+}
+.bg-dg {
+	background-color: var(--dark-gray);
+}
+.bg-lg {
+	background-color: var(--light-gray);
+}
+.bg-card {
+	background-color: var(--card-bg);
+}
+.txt-blue {
+	color: var(--text-blue);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.input {
+	background-color: var(--light-gray);
+	padding: 12px 20px;
+	width: 100%;
+	border: none;
+	font-size: 12px;
+}
+
+.loader {
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 7px;
+}
+.loader span {
+	display: block;
+	width: 7px;
+	height: 7px;
+	background-color: black;
+	border-radius: 100%;
+	animation: loader 0.5s ease-in-out alternate infinite;
+}
+@keyframes loader {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-7px);
+	}
 }
